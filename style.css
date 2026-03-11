@@ -93,3 +93,8 @@ li:hover{
     transition: .2s;
 }
 
+@media (max-width:700px) {
+    .main{
+        width: 95%;
+    }
+}
