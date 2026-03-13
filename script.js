@@ -6,7 +6,14 @@ let list=document.querySelector('.todo-list');
 
 
 let todos=[];
+//user click enter btn
+inp.addEventListener('keydown',(e)=>{
+    if(e.key==="Enter"){
+        addbtn.click();
+    }
+})
 addbtn.addEventListener('click',()=>{
+   
     //if user black task add
     if(inp.value.trim()===""){
       alert('please type a task!!')
