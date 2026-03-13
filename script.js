@@ -5,18 +5,20 @@ let addbtn=document.querySelector('#add-btn');
 let list=document.querySelector('.todo-list');
 
 
+let todos=[];
 addbtn.addEventListener('click',()=>{
     //if user black task add
     if(inp.value.trim()===""){
       alert('please type a task!!')
       return;
     }
+    let task=inp.value;
 
     let lis=document.createElement('li');
     //lis text=inpvalue
     lis.innerText=inp.value
     list.appendChild(lis);
-    inp.value=' ';
+    inp.value='';
     
     //create delete btn
     let delbtn=document.createElement('button');
@@ -38,4 +40,11 @@ addbtn.addEventListener('click',()=>{
     
         
     })
+    todos.push(task);
+    localStorage.setItem("todos",JSON.stringify(todos));
+    let savedTodos = JSON.parse(localStorage.getItem("todos"));
+
+if(savedTodos){
+    todos = savedTodos;
+}
 });
